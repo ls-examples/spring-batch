@@ -1,0 +1,37 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'ru.lilitweb'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.10'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-batch'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.0-M1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.0-M1'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.4.0-M1'
+    testRuntime("org.junit.platform:junit-platform-launcher:1.4.1")
+}
