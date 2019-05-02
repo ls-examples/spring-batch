@@ -6,12 +6,8 @@ spring:
       host: localhost
       port: 27017
       database: library
-
   main:
     allow-bean-definition-overriding: true
-logging.level.org.hibernate.SQL: DEBUG
-logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-
 datasource:
   primary:
     driver-class-name: "com.mysql.jdbc.Driver"
@@ -23,5 +19,3 @@ datasource:
     jdbc-url: "jdbc:mysql://localhost:3306/springbooks?serverTimezone=UTC"
     username: root
     password: rostov
-
-

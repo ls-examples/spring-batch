@@ -31,12 +31,12 @@ public class Book {
 
 
     @Fetch(FetchMode.JOIN)
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @NonNull
     private User author;
 
     @Fetch(FetchMode.JOIN)
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(name = "book_genre",
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "genre_id")
